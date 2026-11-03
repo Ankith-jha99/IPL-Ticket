@@ -1,0 +1,226 @@
+
+/* General Styling */
+:root {
+    --primary: #101b3f;
+    --accent: #d62828;
+    --background: #f4f4f4;
+    --text: #222222;
+    --white: #ffffff;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    padding-top: 75px;
+}
+
+/* Navigation Bar */
+header {
+    background-color: var(--primary);
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    color: white;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: orange;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(120deg, #101b3f, #d62828);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.hero a {
+    display: inline-block;
+    background-color: orange;
+    color: black;
+    padding: 12px 25px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Common Sections */
+section {
+    padding: 50px 30px;
+}
+
+section h2 {
+    color: #101b3f;
+    margin-bottom: 25px;
+}
+
+/* Lists */
+section ul {
+    margin: 15px 30px;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #101b3f;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #eee;
+}
+
+td a {
+    background-color: #d62828;
+    color: white;
+    padding: 7px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+/* Booking Form */
+#bookingForm {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 500px;
+    box-shadow: 0 2px 10px #ccc;
+}
+
+#bookingForm label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+#bookingForm input,
+#bookingForm select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #d62828;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Booking Summary */
+.summary {
+    background-color: white;
+    padding: 25px;
+    margin-top: 25px;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px #ccc;
+}
+
+/* Guidelines */
+.guideline {
+    background-color: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-left: 5px solid #d62828;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: #101b3f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    section {
+        padding: 30px 15px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    #matches {
+        overflow-x: auto;
+    }
+}
