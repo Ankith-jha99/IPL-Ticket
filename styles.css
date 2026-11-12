@@ -224,3 +224,72 @@ footer {
         overflow-x: auto;
     }
 }
+
+/* Reference IPL Website Colour Design */
+
+body {
+    background-color: #f2f2f2;
+}
+
+/* Header */
+header {
+    background-color: rgba(87, 117, 177, 0.488);
+}
+
+/* Footer */
+footer {
+    background-color: rgba(87, 117, 177, 0.488);
+    color: white;
+}
+
+/* Navigation */
+nav a {
+    color: white;
+}
+
+/* Hero */
+.hero {
+    background: #172f65;
+    color: white;
+}
+
+/* Hero Buttons */
+.hero a,
+td a {
+    background-color: orange;
+    color: white;
+}
+
+/* Headings */
+section h2 {
+    color: navy;
+}
+
+/* Table */
+th {
+    background-color: navy;
+    color: white;
+}
+
+/* Content */
+.summary,
+.card {
+    background-color: lightblue;
+}
+
+#bookingForm,
+.guideline {
+    background-color: white;
+}
+
+/* Buttons */
+button {
+    background-color: navy;
+    color: white;
+}
+
+/* Form */
+#bookingForm input,
+#bookingForm select {
+    background-color: white;
+}
