@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPL 2026 Ticket Booking</title>
+    <title>IPL Ticket Booking</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -17,7 +17,7 @@
 
             <ul>
                 <li><a href="#matches">Matches</a></li>
-                <li><a href="#booking">Book Ticket</a></li>
+                <li><a href="booking.html">Book Ticket</a></li>
                 <li><a href="#mybookings">My Bookings</a></li>
                 <li><a href="#guidelines">Guidelines</a></li>
             </ul>
@@ -30,7 +30,7 @@
         <p>Book your IPL 2026 tickets today.</p>
 
         <a href="#matches">View Schedule</a>
-        <a href="#booking">Book Ticket</a>
+        <a href="booking.html">Book Ticket</a>
     </section>
 
     <!-- About IPL -->
@@ -38,7 +38,7 @@
         <h2>About IPL 2026</h2>
 
         <h3>Popular Teams</h3>
-        <ul>
+        <ul type="square">
             <li>Chennai Super Kings</li>
             <li>Mumbai Indians</li>
             <li>Royal Challengers Bengaluru</li>
@@ -48,7 +48,7 @@
         </ul>
 
         <h3>Major Match Venues</h3>
-        <ul>
+        <ul type="circle">
             <li>M. Chinnaswamy Stadium, Bengaluru</li>
             <li>Wankhede Stadium, Mumbai</li>
             <li>MA Chidambaram Stadium, Chennai</li>
@@ -68,6 +68,10 @@
             <option value="CSK">CSK</option>
             <option value="MI">MI</option>
             <option value="KKR">KKR</option>
+            <option value="SRH">SRH</option>
+            <option value="RR">RR</option>
+            <option value="GT">GT</option>
+            <option value="LSG">LSG</option>
         </select>
 
         <table>
@@ -90,8 +94,8 @@
                     <td>RCB vs CSK</td>
                     <td>15 April 2026</td>
                     <td>Bengaluru</td>
-                    <td>₹1000</td>
-                    <td>₹2500</td>
+                    <td>₹800</td>
+                    <td>₹1500</td>
                     <td>₹5000</td>
                     <td><a href="#booking">Book</a></td>
                 </tr>
@@ -101,8 +105,8 @@
                     <td>MI vs KKR</td>
                     <td>17 April 2026</td>
                     <td>Mumbai</td>
-                    <td>₹1200</td>
-                    <td>₹3000</td>
+                    <td>₹1000</td>
+                    <td>₹2500</td>
                     <td>₹5500</td>
                     <td><a href="#booking">Book</a></td>
                 </tr>
@@ -115,6 +119,26 @@
                     <td>₹1000</td>
                     <td>₹2500</td>
                     <td>₹5000</td>
+                    <td><a href="#booking">Book</a></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>CSK vs GT</td>
+                    <td>21 April 2026</td>
+                    <td>Ahmedabad</td>
+                    <td>₹1000</td>
+                    <td>₹2500</td>
+                    <td>₹5000</td>
+                    <td><a href="#booking">Book</a></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>SRH vs RR</td>
+                    <td>22 April 2026</td>
+                    <td>Rajasthan</td>
+                    <td>₹800</td>
+                    <td>₹1500</td>
+                    <td>₹3000</td>
                     <td><a href="#booking">Book</a></td>
                 </tr>
             </tbody>
@@ -221,7 +245,6 @@
         <p>&copy; 2026 IPL Ticket Booking. All Rights Reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
 
 </body>
 </html>
