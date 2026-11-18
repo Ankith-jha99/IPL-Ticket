@@ -1,10 +1,11 @@
 :root {
-    --primary: #101b3f;
+    --primary: #172f65;
     --accent: #d62828;
-    --background: #f4f4f4;
+    --background: #f2f2f2;
     --text: #222222;
     --white: #ffffff;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -12,17 +13,17 @@
 }
 
 body {
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: var(--background);
     color: var(--text);
     line-height: 1.6;
     padding-top: 75px;
 }
 
-
+/* Header & Flexbox Navigation */
 header {
     background-color: var(--primary);
-    padding: 20px;
+    padding: 15px 30px;
     position: fixed;
     top: 0;
     left: 0;
@@ -40,7 +41,7 @@ nav h2 {
     color: white;
 }
 
-nav ul {
+.nav-links {
     display: flex;
     list-style: none;
     gap: 25px;
@@ -56,9 +57,19 @@ nav a:hover {
     color: orange;
 }
 
+/* Hamburger button hidden by default on desktop */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
 /* Hero Section */
 .hero {
-    background: linear-gradient(120deg, #101b3f, #d62828);
+    background: linear-gradient(120deg, #172f65, #d62828);
     color: white;
     text-align: center;
     padding: 100px 20px;
@@ -74,10 +85,10 @@ nav a:hover {
     font-size: 20px;
 }
 
-.hero a {
+.hero-btns a {
     display: inline-block;
     background-color: orange;
-    color: rgb(69, 5, 5);
+    color: white;
     padding: 12px 25px;
     margin: 10px;
     text-decoration: none;
@@ -85,59 +96,93 @@ nav a:hover {
     font-weight: bold;
 }
 
-
 section {
     padding: 50px 30px;
 }
 
 section h2 {
-    color: #101b3f;
+    color: navy;
     margin-bottom: 25px;
 }
 
-/* Lists */
 section ul {
     margin: 15px 30px;
-    color: black;
 }
 
-/* Tables */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background-color: white;
+/* Controls Bar */
+.controls-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
-th, td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: center;
-}
-
-th {
-    background-color: #101b3f;
+.toggle-view-btn {
+    background-color: navy;
     color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-tr:nth-child(even) {
-    background-color: #eee;
+/* CSS Grid: Match Schedule Cards */
+.match-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
 }
 
-td a {
-    background-color: #d62828;
+.card {
+    background-color: lightblue;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.match-no {
+    font-weight: bold;
+    color: #d62828;
+    font-size: 14px;
+}
+
+.card h3 {
+    color: navy;
+}
+
+.card a.book-btn {
+    align-self: flex-start;
+    background-color: orange;
     color: white;
     padding: 7px 15px;
     text-decoration: none;
     border-radius: 4px;
+    margin-top: 10px;
 }
 
-/* Booking Form */
-#bookingForm {
+/* List view style override when toggled via JS */
+.match-grid.list-view {
+    grid-template-columns: 1fr;
+}
+
+/* Booking Layout */
+.booking-wrapper {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+#bookingForm, .summary {
     background-color: white;
     padding: 25px;
     border-radius: 10px;
-    max-width: 500px;
+    flex: 1;
+    min-width: 280px;
     box-shadow: 0 2px 10px #ccc;
 }
 
@@ -154,147 +199,74 @@ td a {
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    background-color: white;
 }
 
-button {
-    background-color: #d62828;
+#bookingForm button[type="submit"] {
+    background-color: navy;
     color: white;
     border: none;
     padding: 12px 20px;
     margin-top: 20px;
     border-radius: 5px;
     cursor: pointer;
+    width: 100%;
 }
 
-/* Booking Summary */
 .summary {
-    background-color: white;
-    padding: 25px;
-    margin-top: 25px;
-    max-width: 500px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px #ccc;
+    margin-top: 0;
 }
 
-/* Guidelines */
-.guideline {
-    background-color: white;
-    padding: 20px;
-    margin: 15px 0;
-    border-left: 5px solid #d62828;
-    border-radius: 5px;
+/* Tables */
+.table-container {
+    overflow-x: auto;
 }
 
-/* Footer */
-footer {
-    background-color: #101b3f;
-    color: white;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
     text-align: center;
-    padding: 20px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-
-    nav {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-    }
-
-    .hero h1 {
-        font-size: 28px;
-    }
-
-    section {
-        padding: 30px 15px;
-    }
-
-    table {
-        font-size: 12px;
-    }
-
-    #matches {
-        overflow-x: auto;
-    }
-}
-
-/* Reference IPL Website Colour Design */
-
-body {
-    background-color: #f2f2f2;
-}
-
-/* Header */
-header {
-    background-color: rgba(87, 117, 177, 0.488);
-}
-
-/* Footer */
-footer {
-    background-color: rgba(87, 117, 177, 0.488);
-    color: white;
-}
-
-/* Navigation */
-nav a {
-    color: white;
-}
-
-/* Hero */
-.hero {
-    background: #172f65;
-    color: white;
-}
-
-/* Hero Buttons */
-.hero a,
-td a {
-    background-color: orange;
-    color: white;
-}
-
-/* Headings */
-section h2 {
-    color: navy;
-}
-
-/* Table */
 th {
     background-color: navy;
     color: white;
 }
 
-/* Content */
-.summary,
-.card {
-    background-color: lightblue;
+tr:nth-child(even) {
+    background-color: #eee;
 }
 
-#bookingForm,
+/* CSS Grid: Guidelines 3-Column Section */
+.guidelines-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
 .guideline {
     background-color: white;
+    padding: 20px;
+    border-left: 5px solid #d62828;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-/* Buttons */
-button {
-    background-color: navy;
+/* Footer */
+footer {
+    background-color: var(--primary);
     color: white;
-}
-
-/* Form */
-#bookingForm input,
-#bookingForm select {
-    background-color: white;
+    text-align: center;
+    padding: 20px;
 }
 
 /* Toast Notification */
-
 .toast {
     visibility: hidden;
     min-width: 250px;
@@ -314,4 +286,47 @@ button {
 .toast.show {
     visibility: visible;
     opacity: 1;
+}
+
+/* Responsive Media Queries (Tablets & Phones) */
+@media (max-width: 768px) {
+    /* Hamburger Menu & Stacked Nav */
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--primary);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 20px;
+        text-align: center;
+        gap: 15px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+
+    /* Stack guidelines into single column */
+    .guidelines-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    section {
+        padding: 30px 15px;
+    }
 }

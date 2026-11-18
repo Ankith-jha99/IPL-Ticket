@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,8 +11,11 @@
     <header>
         <nav>
             <h2>IPL 2026</h2>
-
-            <ul>
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation">
+                ☰
+            </button>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#matches">Matches</a></li>
                 <li><a href="#booking">Book Ticket</a></li>
                 <li><a href="#mybookings">My Bookings</a></li>
@@ -25,14 +27,14 @@
     <section id="home" class="hero">
         <h1>Experience The Stadium Energy Live!</h1>
         <p>Book your IPL 2026 tickets today.</p>
-
-        <a href="#matches">View Schedule</a>
-        <a href="#booking">Book Ticket</a>
+        <div class="hero-btns">
+            <a href="#matches">View Schedule</a>
+            <a href="#booking">Book Ticket</a>
+        </div>
     </section>
 
     <section id="about">
         <h2>About IPL 2026</h2>
-
         <h3>Popular Teams</h3>
         <ul type="circle">
             <li>Chennai Super Kings</li>
@@ -55,204 +57,166 @@
     <section id="matches">
         <h2>Match Schedule</h2>
 
-        <label for="teamFilter">Filter by Team:</label>
+        <div class="controls-bar">
+            <div>
+                <label for="teamFilter">Filter by Team:</label>
+                <select id="teamFilter">
+                    <option value="all">All Teams</option>
+                    <option value="RCB">RCB</option>
+                    <option value="CSK">CSK</option>
+                    <option value="MI">MI</option>
+                    <option value="KKR">KKR</option>
+                    <option value="SRH">SRH</option>
+                    <option value="RR">RR</option>
+                    <option value="GT">GT</option>
+                    <option value="LSG">LSG</option>
+                </select>
+            </div>
+            <!-- Grid / List View Toggle Button -->
+            <button id="viewToggleBtn" class="toggle-view-btn">Switch to List View</button>
+        </div>
 
-        <select id="teamFilter">
-            <option value="all">All Teams</option>
-            <option value="RCB">RCB</option>
-            <option value="CSK">CSK</option>
-            <option value="MI">MI</option>
-            <option value="KKR">KKR</option>
-            <option value="SRH">SRH</option>
-            <option value="RR">RR</option>
-            <option value="GT">GT</option>
-            <option value="LSG">LSG</option>
-        </select>
+        <!-- Match Schedule Cards Container (CSS Grid) -->
+        <div id="matchCardsContainer" class="match-grid">
+            <div class="card" data-team="RCB CSK">
+                <span class="match-no">Match 1</span>
+                <h3>RCB vs CSK</h3>
+                <p><strong>Date:</strong> 15 April 2026</p>
+                <p><strong>Venue:</strong> Bengaluru</p>
+                <p>General: ₹1000 | Premium: ₹2500 | VIP: ₹5000</p>
+                <a href="#booking" class="book-btn">Book Now</a>
+            </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Match No.</th>
-                    <th>Teams</th>
-                    <th>Date & Time</th>
-                    <th>Venue</th>
-                    <th>General</th>
-                    <th>Premium</th>
-                    <th>VIP</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
+            <div class="card" data-team="MI KKR">
+                <span class="match-no">Match 2</span>
+                <h3>MI vs KKR</h3>
+                <p><strong>Date:</strong> 17 April 2026</p>
+                <p><strong>Venue:</strong> Mumbai</p>
+                <p>General: ₹1000 | Premium: ₹2500 | VIP: ₹5000</p>
+                <a href="#booking" class="book-btn">Book Now</a>
+            </div>
 
-            <tbody id="matchTable">
+            <div class="card" data-team="CSK MI">
+                <span class="match-no">Match 3</span>
+                <h3>CSK vs MI</h3>
+                <p><strong>Date:</strong> 19 April 2026</p>
+                <p><strong>Venue:</strong> Chennai</p>
+                <p>General: ₹1000 | Premium: ₹2500 | VIP: ₹5000</p>
+                <a href="#booking" class="book-btn">Book Now</a>
+            </div>
 
-                <tr>
-                    <td>1</td>
-                    <td>RCB vs CSK</td>
-                    <td>15 April 2026</td>
-                    <td>Bengaluru</td>
-                    <td>₹1000</td>
-                    <td>₹2500</td>
-                    <td>₹5000</td>
-                    <td><a href="#booking" class="book-btn">Book</a></td>
-                </tr>
+            <div class="card" data-team="CSK GT">
+                <span class="match-no">Match 4</span>
+                <h3>CSK vs GT</h3>
+                <p><strong>Date:</strong> 21 April 2026</p>
+                <p><strong>Venue:</strong> Ahmedabad</p>
+                <p>General: ₹1000 | Premium: ₹2500 | VIP: ₹5000</p>
+                <a href="#booking" class="book-btn">Book Now</a>
+            </div>
 
-                <tr>
-                    <td>2</td>
-                    <td>MI vs KKR</td>
-                    <td>17 April 2026</td>
-                    <td>Mumbai</td>
-                    <td>₹1000</td>
-                    <td>₹2500</td>
-                    <td>₹5000</td>
-                    <td><a href="#booking" class="book-btn">Book</a></td>
-                </tr>
-
-                <tr>
-                    <td>3</td>
-                    <td>CSK vs MI</td>
-                    <td>19 April 2026</td>
-                    <td>Chennai</td>
-                    <td>₹1000</td>
-                    <td>₹2500</td>
-                    <td>₹5000</td>
-                    <td><a href="#booking" class="book-btn">Book</a></td>
-                </tr>
-
-                <tr>
-                    <td>4</td>
-                    <td>CSK vs GT</td>
-                    <td>21 April 2026</td>
-                    <td>Ahmedabad</td>
-                    <td>₹1000</td>
-                    <td>₹2500</td>
-                    <td>₹5000</td>
-                    <td><a href="#booking" class="book-btn">Book</a></td>
-                </tr>
-
-                <tr>
-                    <td>5</td>
-                    <td>SRH vs RR</td>
-                    <td>22 April 2026</td>
-                    <td>Rajasthan</td>
-                    <td>₹800</td>
-                    <td>₹1500</td>
-                    <td>₹3000</td>
-                    <td><a href="#booking" class="book-btn">Book</a></td>
-                </tr>
-
-            </tbody>
-        </table>
+            <div class="card" data-team="SRH RR">
+                <span class="match-no">Match 5</span>
+                <h3>SRH vs RR</h3>
+                <p><strong>Date:</strong> 22 April 2026</p>
+                <p><strong>Venue:</strong> Rajasthan</p>
+                <p>General: ₹800 | Premium: ₹1500 | VIP: ₹3000</p>
+                <a href="#booking" class="book-btn">Book Now</a>
+            </div>
+        </div>
     </section>
 
     <section id="booking">
         <h2>Book Your Ticket</h2>
+        <div class="booking-wrapper">
+            <form id="bookingForm">
+                <label for="match">Select Match:</label>
+                <select id="match" required>
+                    <option value="">Select a Match</option>
+                    <option value="RCB vs CSK">RCB vs CSK</option>
+                    <option value="MI vs KKR">MI vs KKR</option>
+                    <option value="CSK vs MI">CSK vs MI</option>
+                    <option value="CSK vs GT">CSK vs GT</option>
+                    <option value="SRH vs RR">SRH vs RR</option>
+                </select>
 
-        <form id="bookingForm">
+                <label for="stand">Stand Category:</label>
+                <select id="stand" required>
+                    <option value="">Select Stand</option>
+                    <option value="General">General - ₹1000</option>
+                    <option value="Premium">Premium - ₹2500</option>
+                    <option value="VIP">VIP - ₹5000</option>
+                </select>
 
-            <label for="match">Select Match:</label>
-            <select id="match" required>
-                <option value="">Select a Match</option>
-                <option value="RCB vs CSK">RCB vs CSK</option>
-                <option value="MI vs KKR">MI vs KKR</option>
-                <option value="CSK vs MI">CSK vs MI</option>
-                <option value="CSK vs GT">CSK vs GT</option>
-                <option value="SRH vs RR">SRH vs RR</option>
-            </select>
+                <label for="quantity">Number of Tickets:</label>
+                <input type="number" id="quantity" min="1" max="10" value="1" required>
 
-            <label for="stand">Stand Category:</label>
-            <select id="stand" required>
-                <option value="">Select Stand</option>
-                <option value="General">General - ₹1000</option>
-                <option value="Premium">Premium - ₹2500</option>
-                <option value="VIP">VIP - ₹5000</option>
-            </select>
+                <label for="name">Name:</label>
+                <input type="text" id="name" required minlength="3">
 
-            <label for="quantity">Number of Tickets:</label>
-            <input type="number" id="quantity"
-                   min="1" max="10" value="1" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
 
-            <label for="name">Name:</label>
-            <input type="text" id="name"
-                   required minlength="3">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" pattern="[0-9]{10}" maxlength="10" required title="Enter a valid 10-digit phone number">
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" required>
+                <button type="submit">Confirm Booking</button>
+            </form>
 
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone"
-                   pattern="[0-9]{10}"
-                   maxlength="10"
-                   required
-                   title="Enter a valid 10-digit phone number">
-
-            <button type="submit">Confirm Booking</button>
-
-        </form>
-
-        <!-- Booking Summary -->
-        <div class="summary">
-            <h3>Booking Summary</h3>
-
-            <p>Match: <span id="summaryMatch">Not Selected</span></p>
-
-            <p>Stand: <span id="summaryStand">Not Selected</span></p>
-
-            <p>Price: ₹<span id="summaryPrice">0</span></p>
-
-            <p>Quantity: <span id="summaryQuantity">0</span></p>
-
-            <h3>Total: ₹<span id="total">0</span></h3>
+            <!-- Booking Summary -->
+            <div class="summary">
+                <h3>Booking Summary</h3>
+                <p>Match: <span id="summaryMatch">Not Selected</span></p>
+                <p>Stand: <span id="summaryStand">Not Selected</span></p>
+                <p>Price: ₹<span id="summaryPrice">0</span></p>
+                <p>Quantity: <span id="summaryQuantity">0</span></p>
+                <h3>Total: ₹<span id="total">0</span></h3>
+            </div>
         </div>
     </section>
-
 
     <section id="mybookings">
         <h2>My Ticket Bookings</h2>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Match</th>
-                    <th>Stand</th>
-                    <th>Tickets</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-
-            <tbody id="bookingRecords">
-            </tbody>
-        </table>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Match</th>
+                        <th>Stand</th>
+                        <th>Tickets</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="bookingRecords">
+                </tbody>
+            </table>
+        </div>
     </section>
 
-  
     <section id="guidelines">
         <h2>Ticket Booking Guidelines</h2>
-
-        <div class="guideline">
-            <h3>Ticket Verification</h3>
-            <p>Carry your valid ticket for entry into the stadium.</p>
-        </div>
-
-        <div class="guideline">
-            <h3>ID Proof Requirement</h3>
-            <p>Carry a valid government-issued ID proof.</p>
-        </div>
-
-        <div class="guideline">
-            <h3>Prohibited Items</h3>
-            <p>Outside food, sharp objects and prohibited items are not allowed.</p>
+        <!-- 3-Column Grid Container -->
+        <div class="guidelines-grid">
+            <div class="guideline">
+                <h3>Ticket Verification</h3>
+                <p>Carry your valid ticket for entry into the stadium.</p>
+            </div>
+            <div class="guideline">
+                <h3>ID Proof Requirement</h3>
+                <p>Carry a valid government-issued ID proof.</p>
+            </div>
+            <div class="guideline">
+                <h3>Prohibited Items</h3>
+                <p>Outside food, sharp objects and prohibited items are not allowed.</p>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 IPL Ticket Booking. All Rights Reserved.</p>
+        <p>© 2026 IPL Ticket Booking. All Rights Reserved.</p>
     </footer>
 
-  
     <div id="toast" class="toast"></div>
-
     <script src="app.js"></script>
-
 </body>
 </html>
