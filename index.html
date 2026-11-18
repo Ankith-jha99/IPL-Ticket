@@ -9,36 +9,32 @@
 </head>
 
 <body>
-
-    <!-- Navigation Bar -->
     <header>
         <nav>
             <h2>IPL 2026</h2>
 
             <ul>
                 <li><a href="#matches">Matches</a></li>
-                <li><a href="booking.html">Book Ticket</a></li>
+                <li><a href="#booking">Book Ticket</a></li>
                 <li><a href="#mybookings">My Bookings</a></li>
                 <li><a href="#guidelines">Guidelines</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <h1>Experience The Stadium Energy Live!</h1>
         <p>Book your IPL 2026 tickets today.</p>
 
         <a href="#matches">View Schedule</a>
-        <a href="booking.html">Book Ticket</a>
+        <a href="#booking">Book Ticket</a>
     </section>
 
-    <!-- About IPL -->
     <section id="about">
         <h2>About IPL 2026</h2>
 
         <h3>Popular Teams</h3>
-        <ul type="square">
+        <ul type="circle">
             <li>Chennai Super Kings</li>
             <li>Mumbai Indians</li>
             <li>Royal Challengers Bengaluru</li>
@@ -48,7 +44,7 @@
         </ul>
 
         <h3>Major Match Venues</h3>
-        <ul type="circle">
+        <ul type="square">
             <li>M. Chinnaswamy Stadium, Bengaluru</li>
             <li>Wankhede Stadium, Mumbai</li>
             <li>MA Chidambaram Stadium, Chennai</li>
@@ -56,7 +52,6 @@
         </ul>
     </section>
 
-    <!-- Match Schedule -->
     <section id="matches">
         <h2>Match Schedule</h2>
 
@@ -95,8 +90,8 @@
                     <td>RCB vs CSK</td>
                     <td>15 April 2026</td>
                     <td>Bengaluru</td>
-                    <td>₹800</td>
-                    <td>₹1500</td>
+                    <td>₹1000</td>
+                    <td>₹2500</td>
                     <td>₹5000</td>
                     <td><a href="#booking" class="book-btn">Book</a></td>
                 </tr>
@@ -108,7 +103,7 @@
                     <td>Mumbai</td>
                     <td>₹1000</td>
                     <td>₹2500</td>
-                    <td>₹5500</td>
+                    <td>₹5000</td>
                     <td><a href="#booking" class="book-btn">Book</a></td>
                 </tr>
 
@@ -149,7 +144,6 @@
         </table>
     </section>
 
-    <!-- Booking Section -->
     <section id="booking">
         <h2>Book Your Ticket</h2>
 
@@ -161,14 +155,16 @@
                 <option value="RCB vs CSK">RCB vs CSK</option>
                 <option value="MI vs KKR">MI vs KKR</option>
                 <option value="CSK vs MI">CSK vs MI</option>
+                <option value="CSK vs GT">CSK vs GT</option>
+                <option value="SRH vs RR">SRH vs RR</option>
             </select>
 
             <label for="stand">Stand Category:</label>
             <select id="stand" required>
                 <option value="">Select Stand</option>
-                <option value="1000">General - ₹1000</option>
-                <option value="2500">Premium - ₹2500</option>
-                <option value="5000">VIP - ₹5000</option>
+                <option value="General">General - ₹1000</option>
+                <option value="Premium">Premium - ₹2500</option>
+                <option value="VIP">VIP - ₹5000</option>
             </select>
 
             <label for="quantity">Number of Tickets:</label>
@@ -196,15 +192,20 @@
         <!-- Booking Summary -->
         <div class="summary">
             <h3>Booking Summary</h3>
-            <p>Match: <span id="summaryMatch">RCB vs CSK</span></p>
-            <p>Stand: <span id="summaryStand">General</span></p>
-            <p>Price: ₹<span id="summaryPrice">1000</span></p>
-            <p>Quantity: <span id="summaryQuantity">1</span></p>
-            <h3>Total: ₹<span id="total">1000</span></h3>
+
+            <p>Match: <span id="summaryMatch">Not Selected</span></p>
+
+            <p>Stand: <span id="summaryStand">Not Selected</span></p>
+
+            <p>Price: ₹<span id="summaryPrice">0</span></p>
+
+            <p>Quantity: <span id="summaryQuantity">0</span></p>
+
+            <h3>Total: ₹<span id="total">0</span></h3>
         </div>
     </section>
 
-    <!-- My Bookings -->
+
     <section id="mybookings">
         <h2>My Ticket Bookings</h2>
 
@@ -224,7 +225,7 @@
         </table>
     </section>
 
-
+  
     <section id="guidelines">
         <h2>Ticket Booking Guidelines</h2>
 
@@ -244,15 +245,13 @@
         </div>
     </section>
 
-
     <footer>
         <p>&copy; 2026 IPL Ticket Booking. All Rights Reserved.</p>
     </footer>
 
-    
+  
     <div id="toast" class="toast"></div>
 
-   
     <script src="app.js"></script>
 
 </body>
