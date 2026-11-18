@@ -1,0 +1,55 @@
+
+.hero {
+  background-color: #172554;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 36px;
+}
+
+.hero p {
+  font-size: 18px;
+}
+
+.hero button {
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.matches-section {
+    text-align: center;
+    padding: 40px 20px;
+    color: white;
+}
+
+.matches-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.match-card {
+    background-color: #1e293b;
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+    width: 230px;
+}
+
+.match-card button {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
